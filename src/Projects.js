@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/styles';
 import MCTherapeutix from './Therapeutix.png';
 import BlackJack from './BlackJack.png';
 import TextAdventure from './TextAdventure.PNG';
+import ExpressBlog from './ExpressBlog.png';
 
 const ColorButton = withStyles((theme) => ({
 	root: {
@@ -57,7 +58,7 @@ class Projects extends Component {
 				text:
 					'This is a personal project using a card API to create a BlackJack game in React.',
 				toProj: '',
-				toGithub: '',
+				toGithub: 'https://github.com/o2dependent/BlackJack',
 			},
 			{
 				name: 'Text Adventure',
@@ -65,15 +66,15 @@ class Projects extends Component {
 				text:
 					'This is a personal project built to mimic old school terminal games. Built in HTML/CSS and Javascript.',
 				toProj: '',
-				toGithub: '',
+				toGithub: 'https://github.com/o2dependent/text-adventure',
 			},
 			{
 				name: 'Express Blog',
-				img: '',
+				img: ExpressBlog,
 				text:
 					'This is a blog template that I set up for a co-worker using Express, MongoDB, and EJS.',
 				toProj: '',
-				toGithub: '',
+				toGithub: 'https://github.com/o2dependent/blog-template',
 			},
 		];
 	}
@@ -107,11 +108,14 @@ class Projects extends Component {
 									className='linkTo'
 									href={proj.toProj}
 									target='_blank'
+									disabled={proj.toProj === ''}
 								>
 									Check it out
 								</ColorButton>
 								<ColorButton
 									className='github'
+									href={proj.toGithub}
+									target='_blank'
 									disabled={proj.toGithub === ''}
 								>
 									Github
