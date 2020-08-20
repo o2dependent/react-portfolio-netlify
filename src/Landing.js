@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
 import { withStyles } from '@material-ui/styles';
 import './Landing.css';
-import './Landing-mobile.css';
 
 const style = {
 	opacityNone: {
@@ -23,8 +21,10 @@ class Landing extends Component {
 		super(props);
 		this.h1Text = 'Hello, I am Ethan Olsen.';
 		this.state = {
-			h1LettersArr: Array(this.h1Text.length).fill(false),
-			pShow: false,
+			h1LettersArr: Array(this.h1Text.length).fill(
+				!this.props.firstEnter
+			),
+			pShow: !this.props.firstEnter,
 		};
 	}
 
@@ -45,10 +45,9 @@ class Landing extends Component {
 		));
 	};
 
-	componentDidMount = () => {
+	textAnimation = () => {
 		let i = 0;
 		let timer = setInterval(() => {
-			console.log(i + ' : ' + this.state.h1LettersArr.length);
 			this.setState((st) => ({
 				h1LettersArr: [
 					...st.h1LettersArr.slice(0, i),
@@ -58,26 +57,35 @@ class Landing extends Component {
 			}));
 			if (i === this.h1Text.length - 1) {
 				clearInterval(timer);
-				setTimeout(() => this.setState({ pShow: true }), 1000);
+				setTimeout(() => this.setState({ pShow: true }), 400);
 			} else {
 				i++;
 			}
-		}, 80);
+		}, 50);
+	};
+
+	componentDidMount = () => {
+		this.props.changeIsLoading(false);
+		if (this.props.firstEnter) {
+			setTimeout(() => {
+				this.textAnimation();
+				this.props.changeFirstEnter();
+			}, 2000);
+		}
 	};
 
 	render() {
-		const { classes } = this.props;
+		const { isDoneLoading, classes } = this.props;
+		isDoneLoading && this.textAnimation();
 		return (
 			<div className='Landing'>
-				<Navbar />
-				<div className='LandingBG'>
+				<div className='BG'>
 					<div className='mobile'></div>
 					<div className='left'></div>
 					<div className='flex'></div>
 					<div className='right'></div>
 					<div className='rainbow'></div>
 				</div>
-
 				<div className='Landing-text-container'>
 					<h1>{this.formatH1()}</h1>
 					<p

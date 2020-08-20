@@ -1,7 +1,9 @@
 :root {
+	--cyan: #00ffff;
 	--light: #f4f7f4;
 	--light-50: #f3f6f380;
 	--dark: #1f1521;
+	--dark-accent: #b13a59;
 }
 html,
 body {

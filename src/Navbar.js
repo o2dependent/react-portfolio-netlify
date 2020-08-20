@@ -19,12 +19,16 @@ class Navbar extends Component {
 		this.setState({ open: false });
 	};
 
+	navItemClick = (newHash) => {
+		const { navLoading } = this.props;
+		navLoading();
+		this.onClose();
+	};
+
 	render() {
 		return (
 			<nav className='Navbar'>
-				<a className='Brand' href='#'>
-					Olsen
-				</a>
+				<p className='Brand'>Olsen</p>
 				<div onClick={this.onOpen} className='Hamburger'>
 					<div className='line'></div>
 					<div className='line'></div>
@@ -44,15 +48,29 @@ class Navbar extends Component {
 					</List>
 					<Divider />
 					<List>
-						<ListItem>
-							<Link to='/'>About</Link>
-						</ListItem>
-						<ListItem>
-							<Link to='/projects'>Projects</Link>
-						</ListItem>
-						<ListItem>
-							<Link to='/contact'>Contact</Link>
-						</ListItem>
+						{['About', 'Projects', 'Contact'].map((name) => (
+							<ListItem key={name}>
+								<Link
+									key={name}
+									onClick={() =>
+										this.navItemClick(
+											`/${
+												name === 'About'
+													? ''
+													: name.toLowerCase()
+											}`
+										)
+									}
+									to={`/${
+										name === 'About'
+											? ''
+											: name.toLowerCase()
+									}`}
+								>
+									{name}
+								</Link>
+							</ListItem>
+						))}
 					</List>
 				</SwipeableDrawer>
 			</nav>

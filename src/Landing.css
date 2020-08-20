@@ -12,7 +12,6 @@
 	color: var(--light);
 	font-weight: 300;
 }
-
 .Landing-text-container p {
 	font-size: 30px;
 	letter-spacing: 0.1rem;
@@ -29,7 +28,7 @@
 }
 
 /* # Background # */
-.LandingBG {
+.BG {
 	z-index: -100;
 	position: absolute;
 	top: 0;
@@ -37,43 +36,55 @@
 	display: flex;
 	flex-direction: row;
 	overflow: hidden;
-	height: 100vh;
+	height: 100%;
 	width: 100vw;
 }
-
-.LandingBG .mobile {
+.BG .mobile {
 	display: none;
 	position: absolute;
-	background: url(./landing-bg-mobile.svg);
 	z-index: 1;
 	width: 100vw;
-	height: 100vh;
+	height: 100%;
 }
-.LandingBG .left {
+.Landing .BG .mobile {
+	background: url(./landing-bg-mobile.svg);
+}
+.Contact .BG .mobile {
+	background: url(./contact-bg-mobile.svg);
+}
+.Projects .BG .mobile {
+	background: url(./projects-bg-mobile.svg);
+}
+.Landing .BG .left {
 	height: 100%;
 	width: 566px;
 	z-index: 10;
 	background: url(./landing-bg-left.svg);
 }
-.LandingBG .flex {
+.Contact .BG .left {
+	height: 100%;
+	width: 566px;
+	z-index: 10;
+	background: url(./contact-bg-left.svg);
+}
+.BG .flex {
 	height: 100%;
 	margin: 0 -2px;
 	width: stretch;
 	background: var(--dark);
 }
-.LandingBG .right {
+.BG .right {
 	float: right;
 	height: 100%;
 	width: 564px;
 	right: 0;
 	top: 0;
 	z-index: 10;
-	background: url(./landing-bg-right.svg);
+	background: url(./bg-right.svg);
 }
 @media only screen and (max-width: 900px) {
-	.LandingBG .mobile {
+	.BG .mobile {
 		display: block;
-		background: url(./landing-bg-mobile.svg);
 	}
 }
 .rainbow {
@@ -98,8 +109,26 @@
 		#b72268 85%,
 		#ff0000 100%
 	);
-	transform: translate(-100vw, 0);
 	animation: 4s color-shift linear infinite;
+}
+.Contact .rainbow {
+	padding-right: 0;
+	padding-bottom: 100vh;
+	background: linear-gradient(
+		0deg,
+		#ff0000 0%,
+		#b72268 15%,
+		#833bb4 20%,
+		#833bb4 30%,
+		#b72268 35%,
+		#ff0000 50%,
+		#b72268 65%,
+		#833bb4 70%,
+		#833bb4 80%,
+		#b72268 85%,
+		#ff0000 100%
+	);
+	animation: 4s color-shift-vertical linear infinite;
 }
 @keyframes color-shift {
 	0% {
@@ -107,5 +136,13 @@
 	}
 	100% {
 		transform: translate(0, 0);
+	}
+}
+@keyframes color-shift-vertical {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(0, -100vh);
 	}
 }

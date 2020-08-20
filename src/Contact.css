@@ -1,0 +1,35 @@
+.Contact {
+	height: 90%;
+	width: 100%;
+}
+.Contact-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 85%;
+	width: 100%;
+	color: var(--light);
+	font-weight: 300;
+}
+.Contact-container h1 {
+	margin: 0;
+	font-size: 50px;
+	font-weight: 300;
+}
+.Contact-container p {
+	font-size: 30px;
+	max-width: 900px;
+	letter-spacing: 0.1rem;
+	line-height: 2em;
+}
+.Contact-form {
+	width: 800px;
+	height: fit-content;
+	display: grid;
+	margin-bottom: 1rem;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, fit-content(4rem));
+	grid-column-gap: 1rem;
+	grid-row-gap: 1.25rem;
+}

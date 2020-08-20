@@ -1,0 +1,55 @@
+.Projects {
+	height: 100%;
+	width: 100%;
+}
+.Projects .BG .right {
+	height: 100%;
+	width: 566px;
+	z-index: 10;
+	background: url(./projects-bg-right.svg);
+}
+.Projects .BG .left {
+	height: 100%;
+	width: 566px;
+	z-index: 10;
+	background: url(./projects-bg-left.svg);
+}
+.Projects-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 25%;
+	width: 100%;
+	color: var(--light);
+	font-weight: 300;
+}
+.Projects-container h1 {
+	margin: 0;
+	font-size: 50px;
+	font-weight: 300;
+}
+.Projects-container p {
+	font-size: 20px;
+	max-width: 900px;
+	letter-spacing: 0.1rem;
+	line-height: 2em;
+}
+.Projects-card-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	height: 500px;
+	width: 900px;
+	margin: 0 auto;
+}
+.project-card {
+	display: flex;
+	align-self: center;
+	justify-self: center;
+	width: 370px;
+	height: 208px;
+	box-shadow: 0px 4px 15px #000000;
+}

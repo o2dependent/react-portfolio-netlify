@@ -1,0 +1,41 @@
+@media only screen and (max-width: 900px) {
+	.Landing-text-container p {
+		font-size: 18px;
+		max-width: 90%;
+	}
+	.Landing-text-container h1 {
+		font-size: 30px;
+	}
+	.Contact-container h1 {
+		font-size: 30px;
+	}
+	.Contact-container p {
+		font-size: 18px;
+		max-width: 90%;
+	}
+	.Contact-form {
+		width: 90%;
+	}
+	.BG .right,
+	.BG .left,
+	.BG .flex {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 350px) {
+	.Landing-text-container p {
+		font-size: 15px;
+		max-width: 90%;
+	}
+	.Landing-text-container h1 {
+		font-size: 25px;
+	}
+	.Contact-container h1 {
+		font-size: 25px;
+	}
+	.Contact-container p {
+		font-size: 14px;
+		max-width: 90%;
+	}
+}
