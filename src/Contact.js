@@ -90,9 +90,9 @@ class Contact extends Component {
 					<form
 						className='Contact-form'
 						name='contact'
-						data-netlify='true'
+						netlify
 						method='POST'
-						action='/'
+						action=''
 					>
 						<ContactTextField
 							label='Name'
