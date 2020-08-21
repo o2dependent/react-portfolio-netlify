@@ -92,6 +92,7 @@ class Contact extends Component {
 						name='contact'
 						data-netlify='true'
 						method='POST'
+						action='/'
 					>
 						<ContactTextField
 							label='Name'
