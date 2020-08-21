@@ -87,14 +87,8 @@ class Contact extends Component {
 						Contact me through email or social media if you are
 						interested in working together or just to say hi.
 					</p>
-					<form
-						className='Contact-form'
-						name='contact'
-						netlify
-						method='POST'
-						action='/'
-					>
-						<input type='hidden' name='form' value='contact' />
+					<form className='Contact-form' name='contact' method='POST'>
+						<input type='hidden' name='form-name' value='contact' />
 						<ContactTextField
 							required
 							label='Name'
