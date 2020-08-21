@@ -92,8 +92,9 @@ class Contact extends Component {
 						name='contact'
 						netlify
 						method='POST'
-						action=''
+						action='/'
 					>
+						<input type='hidden' name='form' value='contact' />
 						<ContactTextField
 							required
 							label='Name'
