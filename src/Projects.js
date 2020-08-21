@@ -24,6 +24,8 @@ const ColorButton = withStyles((theme) => ({
 			borderRadius: '15px 0px 0px 15px',
 		},
 		'&.Mui-disabled': {
+			cursor: 'not-allowed',
+			opacity: '50%',
 			backgroundColor: 'grey',
 			color: 'var(--light-50)',
 		},

@@ -59,6 +59,7 @@ class App extends Component {
 										path='/'
 										render={(routeProps) => (
 											<Landing
+												navLoading={this.navLoading}
 												firstEnter={
 													this.state.firstEnter
 												}
@@ -92,6 +93,25 @@ class App extends Component {
 												changeLoading={
 													this.changeLoading
 												}
+											/>
+										)}
+									/>
+									<Route
+										path=''
+										render={(routeProps) => (
+											<Landing
+												navLoading={this.navLoading}
+												firstEnter={
+													this.state.firstEnter
+												}
+												changeFirstEnter={
+													this.changeFirstEnter
+												}
+												isLoading={this.state.isLoading}
+												changeIsLoading={
+													this.changeIsLoading
+												}
+												{...routeProps}
 											/>
 										)}
 									/>

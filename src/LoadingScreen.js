@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/styles';
 
-const cols = 10;
+const cols = 2;
 
 const style = {
 	Loading: {
@@ -19,7 +19,7 @@ const style = {
 		transition: '1s',
 	},
 	box: {
-		width: '125%',
+		width: 'calc(100% + 1px)',
 		transition: 'all 0.5s, opacity 1s',
 		opacity: 1,
 		transform: 'translate(0, 0)',

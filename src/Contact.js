@@ -87,20 +87,33 @@ class Contact extends Component {
 						Contact me through email or social media if you are
 						interested in working together or just to say hi.
 					</p>
-					<form className='Contact-form'>
+					<form
+						className='Contact-form'
+						name='contact'
+						data-netlify='true'
+						method='POST'
+					>
 						<ContactTextField
 							label='Name'
 							className='name'
 							id='name'
+							name='name'
 						/>
-						<ContactTextField label='Email' id='email' />
+						<ContactTextField
+							label='Email'
+							id='email'
+							name='email'
+						/>
 						<ContactTextField
 							multiline={true}
 							label='Message'
 							className='message'
 							id='message'
+							name='message'
 						/>
-						<ColorButton size='medium'>Send Away!</ColorButton>
+						<ColorButton type='submit' size='medium'>
+							Send Away!
+						</ColorButton>
 					</form>
 				</div>
 			</div>

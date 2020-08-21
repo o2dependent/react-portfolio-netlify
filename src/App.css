@@ -11,8 +11,8 @@
 	z-index: -1000;
 }
 .page-appear-active,
-.fade-enter-active,
-.fade-enter {
+.page-enter-active,
+.page-enter {
 	top: 10%;
 	position: absolute;
 }

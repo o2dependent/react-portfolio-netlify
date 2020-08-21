@@ -1,6 +1,32 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/styles';
 import './Landing.css';
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+
+const ColorButton = withStyles((theme) => ({
+	root: {
+		transition: 'all 600ms 500ms',
+		borderRadius: '15px',
+		boxShadow: 'inset 1px 2px #0000001F',
+		color: 'var(--light)',
+		backgroundColor: 'var(--dark-accent)',
+		opacity: (props) => (props.show ? '100%' : '0%'),
+		gridArea: '3 / 1 / 3 / 3',
+		width: '50vw',
+		maxWidth: '400px',
+		margin: '0 auto',
+		marginTop: '1rem',
+		'&:hover': {
+			backgroundColor: 'var(--dark-accent)',
+		},
+		'@media (max-width: 350px)': {
+			'& .MuiButton-label': {
+				fontSize: '14px',
+			},
+		},
+	},
+}))(Button);
 
 const style = {
 	opacityNone: {
@@ -96,9 +122,14 @@ class Landing extends Component {
 						}
 					>
 						I am a full-stack web developer and designer. Check out
-						my blog articles about React and CSS animations to learn
-						more about how I work.
+						some of my projects and visit my GitHub if you are
+						interested in my work.
 					</p>
+					<Link onClick={this.props.navLoading} to='/projects'>
+						<ColorButton show={this.state.pShow}>
+							Projects
+						</ColorButton>
+					</Link>
 				</div>
 			</div>
 		);
