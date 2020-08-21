@@ -95,12 +95,14 @@ class Contact extends Component {
 						action=''
 					>
 						<ContactTextField
+							required
 							label='Name'
 							className='name'
 							id='name'
 							name='name'
 						/>
 						<ContactTextField
+							required
 							label='Email'
 							id='email'
 							name='email'
