@@ -19,6 +19,7 @@ const style = {
 		transition: '1s',
 	},
 	box: {
+		height: '100vh',
 		width: 'calc(100% + 1px)',
 		transition: 'all 0.5s, opacity 1s',
 		opacity: 1,
@@ -48,8 +49,10 @@ const style = {
 			opacity: 0,
 			transform: 'translate(0,100vh)',
 		},
-		'100%': {
+		'50%': {
 			opacity: 1,
+		},
+		'100%': {
 			transform: 'translate(0, 0)',
 		},
 	},
@@ -58,8 +61,10 @@ const style = {
 			opacity: 0,
 			transform: 'translate(0,-100vh)',
 		},
-		'100%': {
+		'50%': {
 			opacity: 1,
+		},
+		'100%': {
 			transform: 'translate(0, 0)',
 		},
 	},
