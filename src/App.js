@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Landing from './Landing';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Contact from './Contact';
 import Navbar from './Navbar';
 import Projects from './Projects';
