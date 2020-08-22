@@ -27,7 +27,8 @@
 	}
 	/* Projects */
 	.Projects-container {
-		height: 10%;
+		justify-content: space-evenly;
+		height: 13%;
 	}
 	.Projects-container h1 {
 		font-size: 30px;
@@ -45,13 +46,6 @@
 		grid-row-gap: 20px;
 		width: 100%;
 		height: 80%;
-		background: linear-gradient(
-			0deg,
-			#ffffff0f 0%,
-			#00000000 5%,
-			#00000000 95%,
-			#00000000 100%
-		);
 	}
 	::-webkit-scrollbar {
 		width: 2px;

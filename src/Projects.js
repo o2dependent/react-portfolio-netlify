@@ -18,7 +18,6 @@ const ColorButton = withStyles((theme) => ({
 		width: '150px',
 		margin: '0',
 		borderRadius: '15px',
-		marginTop: '1rem',
 		'&.linkTo': {
 			borderRadius: '0px 15px 15px 0px',
 		},

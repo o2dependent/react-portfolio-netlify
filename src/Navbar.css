@@ -31,11 +31,35 @@
 }
 /* Material UI Drawer */
 .MuiPaper-root.MuiDrawer-paperAnchorRight {
+	overflow: hidden;
 	min-width: 25%;
 	background-color: var(--dark);
 	color: var(--light);
 	justify-content: start;
 	align-items: center;
+}
+.nav-slider-container {
+	display: grid;
+	z-index: -1;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(2, 1fr);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.nav-slider {
+	transition: all 500ms;
+	background-color: var(--dark-accent);
+	width: 100%;
+	transform: translate(-100%, 0);
+}
+.nav-slider:nth-of-type(2n) {
+	transform: translate(100%, 0);
+}
+.MuiListItem-root.MuiListItem-gutters:hover .nav-slider-container .nav-slider {
+	transform: translate(0, 0);
 }
 .MuiPaper-root.MuiDrawer-paperAnchorRight a {
 	font-size: 24px;

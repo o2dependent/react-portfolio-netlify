@@ -67,6 +67,10 @@ class Navbar extends Component {
 											: name.toLowerCase()
 									}`}
 								>
+									<div className='nav-slider-container'>
+										<div className='nav-slider'></div>
+										<div className='nav-slider'></div>
+									</div>
 									{name}
 								</Link>
 							</ListItem>
