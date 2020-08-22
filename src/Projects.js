@@ -46,6 +46,11 @@ const ColorButton = withStyles((theme) => ({
 				fontSize: '14px',
 			},
 		},
+		'@media (max-width: 900px)': {
+			'&.toContact': {
+				width: '80%',
+			},
+		},
 	},
 }))(Button);
 
