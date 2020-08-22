@@ -32,7 +32,13 @@
 	</head>
 	<body>
 		<!-- Netlify form -->
-		<form name="contact" netlify hidden>
+		<form
+			name="contact"
+			method="post"
+			action="/contact/success"
+			netlify
+			hidden
+		>
 			<input type="hidden" name="form-name" value="contact" />
 			<input type="text" name="name" />
 			<input type="email" name="email" />

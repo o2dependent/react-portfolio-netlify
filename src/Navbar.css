@@ -34,6 +34,7 @@
 	min-width: 25%;
 	background-color: var(--dark);
 	color: var(--light);
+	justify-content: start;
 	align-items: center;
 }
 .MuiPaper-root.MuiDrawer-paperAnchorRight a {
@@ -41,15 +42,32 @@
 	width: 100%;
 	font-weight: 300;
 	color: var(--light);
-	margin: 1rem 3rem;
+	padding: 1rem 3rem;
+	text-align: center;
 }
 .MuiPaper-root.MuiDrawer-paperAnchorRight h1 {
 	font-size: 32px;
 	font-weight: 300;
+	width: 100%;
 	color: var(--light);
-	margin: 1rem 3rem;
+	padding: 1rem 3rem;
+	text-align: center;
 }
 .MuiPaper-root .MuiDivider-root {
 	background: var(--light-50);
 	width: 80%;
+}
+.MuiList-root {
+	width: 100%;
+}
+
+.MuiList-root.Nav-bottom {
+	display: flex;
+	height: 5%;
+	justify-items: center;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 }

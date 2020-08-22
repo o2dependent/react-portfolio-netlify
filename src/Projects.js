@@ -6,6 +6,7 @@ import MCTherapeutix from './Therapeutix.png';
 import BlackJack from './BlackJack.png';
 import TextAdventure from './TextAdventure.PNG';
 import ExpressBlog from './ExpressBlog.png';
+import { Link } from 'react-router-dom';
 
 const ColorButton = withStyles((theme) => ({
 	root: {
@@ -16,6 +17,7 @@ const ColorButton = withStyles((theme) => ({
 		opacity: '90%',
 		width: '150px',
 		margin: '0',
+		borderRadius: '15px',
 		marginTop: '1rem',
 		'&.linkTo': {
 			borderRadius: '0px 15px 15px 0px',
@@ -24,8 +26,10 @@ const ColorButton = withStyles((theme) => ({
 			borderRadius: '15px 0px 0px 15px',
 		},
 		'&.Mui-disabled': {
-			cursor: 'not-allowed',
-			opacity: '50%',
+			'&:hover': {
+				cursor: 'not-allowed',
+			},
+			opacity: '35%',
 			backgroundColor: 'grey',
 			color: 'var(--light-50)',
 		},
@@ -50,7 +54,7 @@ class Projects extends Component {
 				name: 'MCTherapeutix',
 				img: MCTherapeutix,
 				text:
-					'This was a paid project for a massage therapist. This was built using only HTML/CSS and Javascript.',
+					'This was a paid project for a massage therapist. Built in HTML/CSS and vanilla Javascript.',
 				toProj: 'https://www.mctherapeutix.com/',
 				toGithub: '',
 			},
@@ -66,7 +70,7 @@ class Projects extends Component {
 				name: 'Text Adventure',
 				img: TextAdventure,
 				text:
-					'This is a personal project built to mimic old school terminal games. Built in HTML/CSS and Javascript.',
+					'This is a personal project built to mimic old school terminal games. Built in HTML/CSS and vanilla Javascript.',
 				toProj: '',
 				toGithub: 'https://github.com/o2dependent/text-adventure',
 			},
@@ -74,7 +78,7 @@ class Projects extends Component {
 				name: 'Express Blog',
 				img: ExpressBlog,
 				text:
-					'This is a blog template that I set up for a co-worker using Express, MongoDB, and EJS.',
+					'This is a blog template that I set up using Express, MongoDB, and EJS.',
 				toProj: '',
 				toGithub: 'https://github.com/o2dependent/blog-template',
 			},
@@ -97,6 +101,9 @@ class Projects extends Component {
 						implementing my designs with React and Node. Check out
 						my projects below and let me know if you like it.
 					</p>
+					<Link onClick={this.props.navLoading} to='/contact'>
+						<ColorButton>Contact Me</ColorButton>
+					</Link>
 				</div>
 				<div className='Projects-card-container'>
 					{this.projectArr.map((proj) => (

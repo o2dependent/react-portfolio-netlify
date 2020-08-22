@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import Landing from './Landing';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Contact from './Contact';
 import Navbar from './Navbar';
 import Projects from './Projects';
 import LoadingScreen from './LoadingScreen';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import ContactSuccess from './ContactSuccess';
 
 class App extends Component {
 	constructor(props) {
@@ -74,6 +75,19 @@ class App extends Component {
 											/>
 										)}
 									/>
+
+									<Route
+										exact
+										path='/projects'
+										render={(routeProps) => (
+											<Projects
+												navLoading={this.navLoading}
+												changeLoading={
+													this.changeLoading
+												}
+											/>
+										)}
+									/>
 									<Route
 										exact
 										path='/contact'
@@ -87,9 +101,9 @@ class App extends Component {
 									/>
 									<Route
 										exact
-										path='/projects'
+										path='/contact/success'
 										render={(routeProps) => (
-											<Projects
+											<ContactSuccess
 												changeLoading={
 													this.changeLoading
 												}
@@ -97,7 +111,7 @@ class App extends Component {
 										)}
 									/>
 									<Route
-										path=''
+										path='*'
 										render={(routeProps) => (
 											<Landing
 												navLoading={this.navLoading}

@@ -72,6 +72,10 @@ class Navbar extends Component {
 							</ListItem>
 						))}
 					</List>
+					{/* <List className='Nav-bottom'>
+						<Divider />
+						<ListItem>ethan@eolsen.dev</ListItem>
+					</List> */}
 				</SwipeableDrawer>
 			</nav>
 		);

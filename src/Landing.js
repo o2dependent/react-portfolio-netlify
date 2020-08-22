@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const ColorButton = withStyles((theme) => ({
 	root: {
-		transition: 'all 600ms 500ms',
+		transition: 'all 1000ms 600ms',
 		borderRadius: '15px',
 		boxShadow: 'inset 1px 2px #0000001F',
 		color: 'var(--light)',
@@ -96,7 +96,7 @@ class Landing extends Component {
 			setTimeout(() => {
 				this.textAnimation();
 				this.props.changeFirstEnter();
-			}, 2000);
+			}, 1500);
 		}
 	};
 
