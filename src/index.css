@@ -5,10 +5,12 @@
 	--dark: #1f1521;
 	--dark-accent: #b13a59;
 }
+
 html,
 body {
 	height: 100%;
 }
+
 body {
 	overflow: hidden;
 	margin: 0;

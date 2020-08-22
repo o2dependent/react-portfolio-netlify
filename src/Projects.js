@@ -18,6 +18,11 @@ const ColorButton = withStyles((theme) => ({
 		width: '150px',
 		margin: '0',
 		borderRadius: '15px',
+		'&.toContact': {
+			marginTop: '2.5%',
+			opacity: '100%',
+			boxShadow: '1px 0px 10px var(--dark)',
+		},
 		'&.linkTo': {
 			borderRadius: '0px 15px 15px 0px',
 		},
@@ -100,9 +105,6 @@ class Projects extends Component {
 						implementing my designs with React and Node. Check out
 						my projects below and let me know if you like it.
 					</p>
-					<Link onClick={this.props.navLoading} to='/contact'>
-						<ColorButton>Contact Me</ColorButton>
-					</Link>
 				</div>
 				<div className='Projects-card-container'>
 					{this.projectArr.map((proj) => (
@@ -132,6 +134,9 @@ class Projects extends Component {
 						</div>
 					))}
 				</div>
+				<Link onClick={this.props.navLoading} to='/contact'>
+					<ColorButton className='toContact'>Contact Me</ColorButton>
+				</Link>
 			</div>
 		);
 	}
