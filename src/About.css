@@ -1,0 +1,17 @@
+.About {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+.About .text-container {
+	justify-content: flex-start;
+}
+.About .text-container p {
+	font-size: 24px;
+}
+.About .text-container h1 {
+	justify-self: flex-start;
+}

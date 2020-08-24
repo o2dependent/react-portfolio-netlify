@@ -7,17 +7,14 @@
 .page-appear,
 .page-enter {
 	position: absolute;
-	top: 10%;
 	z-index: -1000;
 }
 .page-appear-active,
 .page-enter-active,
 .page-enter {
-	top: 10%;
 	position: absolute;
 }
-.page-exit.fade-exit-active {
+.page-exit.page-exit-active {
 	position: absolute;
-	top: 10%;
 	z-index: -1000;
 }

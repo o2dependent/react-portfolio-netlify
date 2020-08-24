@@ -1,21 +1,14 @@
 .Projects {
-	height: 100%;
+	height: fit-content;
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
 }
-.Projects .BG .right {
-	height: 100%;
-	width: 566px;
-	z-index: 10;
-	background: url(./projects-bg-right.svg);
-}
-.Projects .BG .left {
-	height: 100%;
-	width: 566px;
-	z-index: 10;
-	background: url(./projects-bg-left.svg);
-}
+
 .Projects-container {
 	display: flex;
+	margin-top: 10vh;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
@@ -115,4 +108,8 @@
 	height: fit-content;
 	display: flex;
 	justify-content: space-between;
+}
+a.toContact {
+	width: 700px;
+	align-self: center;
 }

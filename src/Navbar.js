@@ -19,7 +19,7 @@ class Navbar extends Component {
 		this.setState({ open: false });
 	};
 
-	navItemClick = (newHash) => {
+	navItemClick = () => {
 		const { navLoading } = this.props;
 		navLoading();
 		this.onClose();
@@ -28,7 +28,9 @@ class Navbar extends Component {
 	render() {
 		return (
 			<nav className='Navbar'>
-				<p className='Brand'>Olsen</p>
+				<Link to='/' onClick={this.navItemClick} className='Brand'>
+					Olsen
+				</Link>
 				<div onClick={this.onOpen} className='Hamburger'>
 					<div className='line'></div>
 					<div className='line'></div>
@@ -41,33 +43,36 @@ class Navbar extends Component {
 					onOpen={this.onOpen}
 					transitionDuration={(100, 400)}
 				>
-					<List>
+					<List className='header'>
 						<ListItem>
+							<div className='title-slider-container'>
+								<div className='title-e'>
+									<div className='title-slider'></div>
+									<div className='title-slider'></div>
+									<div className='title-slider'></div>
+								</div>
+								<div className='title-o'>
+									<div className='title-slider'></div>
+									<div className='title-slider'></div>
+									<div className='title-slider'></div>
+									<div className='title-slider'></div>
+								</div>
+							</div>
 							<h1>Ethan Olsen</h1>
 						</ListItem>
 					</List>
 					<Divider />
-					<List>
+					<List className='nav-item-list'>
 						{['About', 'Projects', 'Contact'].map((name) => (
 							<ListItem key={name}>
 								<Link
 									key={name}
-									onClick={() =>
-										this.navItemClick(
-											`/${
-												name === 'About'
-													? ''
-													: name.toLowerCase()
-											}`
-										)
-									}
-									to={`/${
-										name === 'About'
-											? ''
-											: name.toLowerCase()
-									}`}
+									onClick={() => this.navItemClick()}
+									to={`/${name.toLowerCase()}`}
 								>
 									<div className='nav-slider-container'>
+										<div className='nav-slider'></div>
+										<div className='nav-slider'></div>
 										<div className='nav-slider'></div>
 										<div className='nav-slider'></div>
 									</div>
@@ -76,10 +81,38 @@ class Navbar extends Component {
 							</ListItem>
 						))}
 					</List>
-					{/* <List className='Nav-bottom'>
+					<List className='footer'>
 						<Divider />
-						<ListItem>ethan@eolsen.dev</ListItem>
-					</List> */}
+						<ListItem className='footer-icons'>
+							<a
+								className='icon-link'
+								href='https://www.linkedin.com/in/ethan-olsen-78033a164/'
+								rel='noopener noreferrer'
+								target='_blank'
+							>
+								<i class='fab fa-linkedin'></i>
+							</a>
+							<a
+								className='icon-link'
+								href='https://github.com/o2dependent'
+								rel='noopener noreferrer'
+								target='_blank'
+							>
+								<i class='fab fa-github'></i>
+							</a>
+							<a
+								className='icon-link'
+								href='mailto: 131eolsen@gmail.com'
+								rel='noopener noreferrer'
+								target='_blank'
+							>
+								<i class='fas fa-envelope'></i>
+							</a>
+							{/* <a className='icon-link' href='#'>
+								<i class='fab fa-discord'></i>
+							</a> */}
+						</ListItem>
+					</List>
 				</SwipeableDrawer>
 			</nav>
 		);

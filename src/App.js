@@ -8,6 +8,7 @@ import Projects from './Projects';
 import LoadingScreen from './LoadingScreen';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import ContactSuccess from './ContactSuccess';
+// import About from './About';
 
 class App extends Component {
 	constructor(props) {
@@ -75,7 +76,35 @@ class App extends Component {
 											/>
 										)}
 									/>
-
+									<Route
+										exact
+										path='/about'
+										render={(routeProps) => (
+											// <About
+											// 	navLoading={this.navLoading}
+											// 	changeLoading={
+											// 		this.changeLoading
+											// 	}
+											// />
+											// ######################
+											// ### FOR THE COMMIT ###
+											// ######################
+											<Landing
+												navLoading={this.navLoading}
+												firstEnter={
+													this.state.firstEnter
+												}
+												changeFirstEnter={
+													this.changeFirstEnter
+												}
+												isLoading={this.state.isLoading}
+												changeIsLoading={
+													this.changeIsLoading
+												}
+												{...routeProps}
+											/>
+										)}
+									/>
 									<Route
 										exact
 										path='/projects'

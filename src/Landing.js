@@ -3,11 +3,11 @@ import { withStyles } from '@material-ui/styles';
 import './Landing.css';
 import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import BG from './BG';
 
 const ColorButton = withStyles((theme) => ({
 	root: {
 		transition: 'all 1000ms 600ms',
-		borderRadius: '15px',
 		boxShadow: 'inset 1px 2px #0000001F',
 		color: 'var(--light)',
 		backgroundColor: 'var(--dark-accent)',
@@ -105,14 +105,8 @@ class Landing extends Component {
 		isDoneLoading && this.textAnimation();
 		return (
 			<div className='Landing'>
-				<div className='BG'>
-					<div className='mobile'></div>
-					<div className='left'></div>
-					<div className='flex'></div>
-					<div className='right'></div>
-					<div className='rainbow'></div>
-				</div>
-				<div className='Landing-text-container'>
+				<BG />
+				<div className='text-container'>
 					<h1>{this.formatH1()}</h1>
 					<p
 						className={

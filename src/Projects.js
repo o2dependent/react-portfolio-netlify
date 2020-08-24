@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Projects.css';
 import { Button } from '@material-ui/core';
 import { withStyles } from '@material-ui/styles';
 import MCTherapeutix from './Therapeutix.png';
@@ -7,6 +6,8 @@ import BlackJack from './BlackJack.png';
 import TextAdventure from './TextAdventure.PNG';
 import ExpressBlog from './ExpressBlog.png';
 import { Link } from 'react-router-dom';
+import BG from './BG';
+import './Projects.css';
 
 const ColorButton = withStyles((theme) => ({
 	root: {
@@ -17,17 +18,18 @@ const ColorButton = withStyles((theme) => ({
 		opacity: '90%',
 		width: '150px',
 		margin: '0',
-		borderRadius: '15px',
 		'&.toContact': {
-			marginTop: '2.5%',
+			width: '400px',
+			marginBottom: '2.5vh',
+			marginTop: '2.5vh',
 			opacity: '100%',
 			boxShadow: '1px 0px 10px var(--dark)',
 		},
 		'&.linkTo': {
-			borderRadius: '0px 15px 15px 0px',
+			borderRadius: '0px 15px 0px 0px',
 		},
 		'&.github': {
-			borderRadius: '15px 0px 0px 15px',
+			borderRadius: '15px 0px 0px 0px',
 		},
 		'&.Mui-disabled': {
 			'&:hover': {
@@ -96,13 +98,7 @@ class Projects extends Component {
 	render() {
 		return (
 			<div className='Projects'>
-				<div className='BG'>
-					<div className='mobile'></div>
-					<div className='left'></div>
-					<div className='flex'></div>
-					<div className='right'></div>
-					<div className='rainbow'></div>
-				</div>
+				<BG />
 				<div className='Projects-container'>
 					<h1>Projects</h1>
 					<p>
@@ -139,7 +135,11 @@ class Projects extends Component {
 						</div>
 					))}
 				</div>
-				<Link onClick={this.props.navLoading} to='/contact'>
+				<Link
+					className='toContact'
+					onClick={this.props.navLoading}
+					to='/contact'
+				>
 					<ColorButton className='toContact'>Contact Me</ColorButton>
 				</Link>
 			</div>

@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import './Contact.css';
 import { TextField, Button } from '@material-ui/core';
 import { withStyles } from '@material-ui/styles';
+import BG from './BG';
 
 const ColorButton = withStyles((theme) => ({
 	root: {
 		transition: 'all 500ms',
-		borderRadius: '15px',
 		boxShadow: 'inset 1px 2px #0000001F',
 		color: 'var(--light)',
 		backgroundColor: 'var(--dark-accent)',
@@ -74,13 +74,7 @@ class Contact extends Component {
 	render() {
 		return (
 			<div className='Contact'>
-				<div className='BG'>
-					<div className='mobile'></div>
-					<div className='left'></div>
-					<div className='flex'></div>
-					<div className='right'></div>
-					<div className='rainbow'></div>
-				</div>
+				<BG />
 				<div className='Contact-container'>
 					<h1>Contact</h1>
 					<p>
