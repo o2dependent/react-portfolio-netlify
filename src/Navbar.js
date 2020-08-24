@@ -43,8 +43,8 @@ class Navbar extends Component {
 					onOpen={this.onOpen}
 					transitionDuration={(100, 400)}
 				>
-					<List className='header'>
-						<ListItem>
+					<List>
+						<ListItem className='header'>
 							<div className='title-slider-container'>
 								<div className='title-e'>
 									<div className='title-slider'></div>
@@ -66,7 +66,7 @@ class Navbar extends Component {
 					<Divider />
 					<List className='nav-item-list'>
 						{['About', 'Projects', 'Contact'].map((name) => (
-							<ListItem key={name}>
+							<ListItem className='nav-item' key={name}>
 								<Link
 									key={name}
 									onClick={() => this.navItemClick()}
@@ -88,7 +88,7 @@ class Navbar extends Component {
 						<ListItem className='footer-icons'>
 							<a
 								className='icon-link'
-								href='https://www.linkedin.com/in/ethan-olsen-78033a164/'
+								href='https://www.linkedin.com/in/eolsendev/'
 								rel='noopener noreferrer'
 								target='_blank'
 							>

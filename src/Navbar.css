@@ -31,6 +31,10 @@
 	background-color: white;
 	margin: 0;
 }
+/* Nav items */
+.nav-item {
+	height: 10vh;
+}
 /* Material UI Drawer */
 .MuiPaper-root.MuiDrawer-paperAnchorRight {
 	overflow: hidden;
@@ -77,6 +81,9 @@
 	bottom: 0;
 	left: 0;
 }
+.header {
+	height: 15vh;
+}
 .footer .footer-icons {
 	width: 80%;
 	display: flex;
@@ -112,15 +119,19 @@
 	animation: 4s title-slider-wiggle infinite;
 }
 .title-e {
+	overflow: hidden;
 	display: grid;
 	grid-template-rows: repeat(5, 1fr);
+}
+.title-slider {
+	opacity: 0.3;
 }
 .title-e .title-slider {
 	width: 98%;
 	background-color: var(--dark-accent);
-	opacity: 0.5;
 }
 .title-e .title-slider:first-of-type {
+	transform: translate(0, -105%);
 	transition-delay: 150ms;
 	grid-area: 1 / 1 / 2 / 2;
 }
@@ -141,6 +152,7 @@
 	grid-area: 4 / 1 / 5 / 2;
 }
 .title-e .title-slider:nth-of-type(5) {
+	transform: translate(0, 105%);
 	transition-delay: 150ms;
 	grid-area: 5 / 1 / 6 / 2;
 }
@@ -151,25 +163,22 @@
 	grid-template-rows: repeat(5, 1fr);
 	grid-template-columns: repeat(5, 1fr);
 }
-.title-o .title-slider {
-	opacity: 0.5;
-}
 .title-o .title-slider:first-of-type {
 	grid-area: 2 / 1 / 5 / 2;
-	transform: translate(-101%, 0);
+	transform: translate(-105%, 0);
 }
 .title-o .title-slider:nth-of-type(2) {
 	grid-area: 2 / 5 / 5 / 6;
-	transform: translate(101%, 0);
+	transform: translate(105%, 0);
 	transition-delay: 75ms;
 }
 .title-o .title-slider:nth-of-type(3) {
 	grid-area: 1 / 1 / 2 / 6;
-	transform: translate(101%, 0);
+	transform: translate(105%, 0);
 }
 .title-o .title-slider:nth-of-type(4) {
 	grid-area: 5 / 1 / 6 / 6;
-	transform: translate(-101%, 0);
+	transform: translate(-105%, 0);
 }
 .title-slider {
 	transition: all 500ms;
@@ -192,6 +201,7 @@
 	.title-slider-container
 	.title-slider {
 	transform: translate(0, 0);
+	opacity: 1;
 }
 /* Nav sliders */
 .nav-slider-container {
