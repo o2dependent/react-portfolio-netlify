@@ -194,13 +194,16 @@
 	justify-content: space-evenly;
 	font-size: 25px;
 }
-.fab {
+.fab,
+.fas {
 	transition: all 300ms;
+	margin: 0.5vh 0;
 }
 .footer-icons a.icon-link {
 	padding: 0 10%;
 	width: 5px;
 }
-.footer-icons a.icon-link:hover .fab {
+.footer-icons a.icon-link:hover .fab,
+.footer-icons a.icon-link:hover .fas {
 	color: var(--dark-accent);
 }
