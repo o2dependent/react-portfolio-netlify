@@ -50,6 +50,8 @@ class Navbar extends Component {
 									<div className='title-slider'></div>
 									<div className='title-slider'></div>
 									<div className='title-slider'></div>
+									<div className='title-slider'></div>
+									<div className='title-slider'></div>
 								</div>
 								<div className='title-o'>
 									<div className='title-slider'></div>

@@ -84,8 +84,9 @@ class Contact extends Component {
 					<form
 						className='Contact-form'
 						name='contact'
+						method='post'
 						action='/contact/success'
-						method='POST'
+						netlify
 					>
 						<input type='hidden' name='form-name' value='contact' />
 						<ContactTextField
