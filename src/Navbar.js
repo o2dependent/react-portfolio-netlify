@@ -7,6 +7,7 @@ class Navbar extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			headerActive: false,
 			open: false,
 		};
 	}
@@ -23,6 +24,13 @@ class Navbar extends Component {
 		const { navLoading } = this.props;
 		navLoading();
 		this.onClose();
+	};
+
+	handleHeaderClick = () => {
+		if (!this.state.headerActive) {
+			this.setState({ headerActive: true });
+			setTimeout(() => this.setState({ headerActive: false }), 2500);
+		}
 	};
 
 	render() {
@@ -44,8 +52,15 @@ class Navbar extends Component {
 					transitionDuration={(100, 400)}
 				>
 					<List>
-						<ListItem className='header'>
-							<div className='title-slider-container'>
+						<ListItem
+							className='header'
+							onClick={this.handleHeaderClick}
+						>
+							<div
+								className={`title-slider-container ${
+									this.state.headerActive && `header-active`
+								}`}
+							>
 								<div className='title-e'>
 									<div className='title-slider'></div>
 									<div className='title-slider'></div>

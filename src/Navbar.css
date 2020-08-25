@@ -118,6 +118,12 @@
 	animation-play-state: paused;
 	animation: 4s title-slider-wiggle infinite;
 }
+.title-slider-container.header-active .title-e .title-slider,
+.title-slider-container.header-active .title-o .title-slider {
+	opacity: 1;
+	transform: translate(0, 0);
+	transition: 300ms;
+}
 .title-e {
 	overflow: hidden;
 	display: grid;
@@ -197,12 +203,7 @@
 .title-slider:nth-of-type(3n) {
 	transition-delay: 75ms;
 }
-.MuiListItem-root.MuiListItem-gutters:hover
-	.title-slider-container
-	.title-slider {
-	transform: translate(0, 0);
-	opacity: 1;
-}
+
 /* Nav sliders */
 .nav-slider-container {
 	display: grid;
