@@ -3,7 +3,7 @@ import { Button } from '@material-ui/core';
 import { withStyles } from '@material-ui/styles';
 import MCTherapeutix from './Therapeutix.png';
 import BlackJack from './BlackJack.png';
-import TextAdventure from './TextAdventure.PNG';
+import FigMood from './FigMood.png';
 import ExpressBlog from './ExpressBlog.png';
 import { Link } from 'react-router-dom';
 import BG from './BG';
@@ -62,6 +62,14 @@ class Projects extends Component {
 		this.state = {};
 		this.projectArr = [
 			{
+				name: 'FigMood',
+				img: FigMood,
+				text:
+					'This is a mood tracking PWA that is still in beta with the UI designed for mobile. This project was built using React, MongoDB, and Express.',
+				toProj: 'https://figmood.netlify.app/',
+				toGithub: 'https://github.com/o2dependent/mood-log',
+			},
+			{
 				name: 'MCTherapeutix',
 				img: MCTherapeutix,
 				text:
@@ -77,14 +85,7 @@ class Projects extends Component {
 				toProj: '',
 				toGithub: 'https://github.com/o2dependent/BlackJack',
 			},
-			{
-				name: 'Text Adventure',
-				img: TextAdventure,
-				text:
-					'This is a personal project built to mimic old school terminal games. Built in HTML/CSS and vanilla Javascript.',
-				toProj: '',
-				toGithub: 'https://github.com/o2dependent/text-adventure',
-			},
+
 			{
 				name: 'Express Blog',
 				img: ExpressBlog,

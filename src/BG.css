@@ -123,11 +123,13 @@
 	height: 100%;
 	width: 566px;
 	z-index: 10;
+	background: var(--dark);
 	background: url(./projects-bg-right.svg);
 }
 .Projects .BG .left {
 	height: 100%;
 	width: 566px;
 	z-index: 10;
+	background: var(--dark);
 	background: url(./projects-bg-left.svg);
 }
