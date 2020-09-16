@@ -8,6 +8,7 @@ import Projects from './Projects';
 import LoadingScreen from './LoadingScreen';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import ContactSuccess from './ContactSuccess';
+import { AnimatePresence } from 'framer-motion';
 // import About from './About';
 
 class App extends Component {
@@ -40,13 +41,22 @@ class App extends Component {
 		return (
 			<div className='App'>
 				<Navbar navLoading={this.navLoading} />
-				{!this.state.isDoneLoading && (
-					<LoadingScreen
-						isLoading={this.state.isLoading}
-						isDoneLoading={this.state.isDoneLoading}
-						changeIsDoneLoading={this.changeIsDoneLoading}
-					/>
-				)}
+				<div
+					style={{
+						position: 'absolute',
+						height: '100vh',
+						width: '100vw',
+						overflow: 'hidden',
+					}}
+				>
+					<AnimatePresence>
+						{!this.state.isDoneLoading && (
+							<LoadingScreen
+								changeIsDoneLoading={this.changeIsDoneLoading}
+							/>
+						)}
+					</AnimatePresence>
+				</div>
 				<Route
 					render={({ location }) => (
 						<TransitionGroup component={null}>

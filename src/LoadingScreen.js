@@ -1,124 +1,48 @@
-import React, { Component } from 'react';
-import { withStyles } from '@material-ui/styles';
+import React from 'react';
+import { motion } from 'framer-motion';
+import chroma from 'chroma-js';
 
-const cols = 2;
+const LoadingScreen = (props) => {
+	const { xDir, changeIsDoneLoading } = props;
+	const colors = ['#b72268', '#833bb4', '#ff0000'];
+	const bg = chroma
+		.scale([colors[Math.floor(Math.random() * colors.length)], '#1F1521'])
+		.colors(10);
 
-const style = {
-	Loading: {
-		display: (props) => (props.isDoneLoading ? 'none' : 'grid'),
-		gridTemplateColumns: `repeat(${cols},1fr)`,
-		gridTemplateRows: '1fr',
-		gridColumnGap: '0px',
-		zIndex: '1000',
-		width: '100%',
-		height: '100vh',
-		overflow: 'hidden',
-		position: 'fixed',
-		top: 0,
-		left: 0,
-		transition: '0.8s',
-	},
-	box: {
-		height: '100vh',
-		width: 'calc(100% + 1px)',
-		transition: 'all 0.5s, opacity 1s',
-		opacity: 1,
-		transform: 'translate(0, 0)',
-		backgroundColor: 'var(--dark)',
-		zIndex: '10000',
-		animation: '0.7s $slideToTop linear',
-		'&:nth-of-type(2n)': {
-			animation: '0.7s $slideToBottom linear',
-			transform: 'translate(0, 0)',
-			'&$done': {
-				transform: 'translate(0,100vh)',
-				animation: '0.7s $slideOutTop linear',
-			},
-		},
-		'&$done': {
-			opacity: 0,
-			transform: 'translate(0,-100vh)',
-			animation: '0.7s $slideOutBottom linear',
-		},
-	},
-	done: {
-		opacity: 0,
-	},
-	'@keyframes slideToTop': {
-		'0%': {
-			opacity: 0,
-			transform: 'translate(0,100vh)',
-		},
-		'50%': {
-			opacity: 1,
-		},
-		'100%': {
-			transform: 'translate(0, 0)',
-		},
-	},
-	'@keyframes slideToBottom': {
-		'0%': {
-			opacity: 0,
-			transform: 'translate(0,-100vh)',
-		},
-		'50%': {
-			opacity: 1,
-		},
-		'100%': {
-			transform: 'translate(0, 0)',
-		},
-	},
-	'@keyframes slideOutTop': {
-		from: {
-			transform: 'translate(0, 0)',
-		},
-		to: {
-			transform: 'translate(0,100vh)',
-		},
-	},
-	'@keyframes slideOutBottom': {
-		from: {
-			transform: 'translate(0, 0)',
-		},
-		to: {
-			transform: 'translate(0,-100vh)',
-		},
-	},
+	setTimeout(() => changeIsDoneLoading(true), 1500);
+
+	return (
+		<>
+			{bg.map((x, i) => (
+				<motion.div
+					key={i}
+					style={{
+						zIndex: 1000,
+						background: x,
+						position: 'absolute',
+						top: 0,
+						left: 0,
+						height: '100%',
+						width: '100%',
+					}}
+					initial={{
+						y: '-100%',
+					}}
+					animate={{
+						y: 0,
+					}}
+					exit={{
+						y: '100%',
+						transition: {
+							delay: (bg.length - 1) * 0.05 - i * 0.05,
+							duration: 0.75,
+						},
+					}}
+					transition={{ duration: 0.75, delay: 0.05 * i }}
+				></motion.div>
+			))}
+		</>
+	);
 };
 
-class LoadingScreen extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			boxes: Array(cols).fill(true),
-		};
-	}
-
-	componentDidMount = () => {
-		setTimeout(() => {
-			// start animation out and setTimeout to set App state after animation
-			this.setState({ boxes: Array(cols).fill(false) });
-			setTimeout(() => {
-				this.props.changeIsDoneLoading(true);
-			}, 700);
-		}, 2000);
-	};
-
-	render() {
-		const { isLoading, classes } = this.props;
-		return (
-			<div
-				className={`${classes.Loading} ${isLoading && classes.active}`}
-			>
-				{this.state.boxes.map((box, i) => (
-					<div
-						key={i}
-						className={`${classes.box} ${box ? '' : classes.done}`}
-					></div>
-				))}
-			</div>
-		);
-	}
-}
-
-export default withStyles(style)(LoadingScreen);
+export default LoadingScreen;

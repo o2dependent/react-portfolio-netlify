@@ -51,6 +51,9 @@
 	box-shadow: 0px 4px 15px #000000;
 	font-weight: 300;
 }
+.project-card * {
+	cursor: default;
+}
 .project-card img {
 	position: absolute;
 	top: 0;
@@ -80,6 +83,9 @@
 	right: 0;
 	opacity: 0;
 }
+.project-buttons * {
+	cursor: pointer;
+}
 .overlay {
 	position: absolute;
 	top: 0;
@@ -92,6 +98,9 @@
 }
 .project-card:hover .overlay {
 	opacity: 0.85;
+}
+.project-card:hover img {
+	filter: blur(1px) saturate(50%);
 }
 .project-card:hover h2,
 .project-card:hover p {

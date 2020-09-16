@@ -11,6 +11,7 @@ import './Projects.css';
 
 const ColorButton = withStyles((theme) => ({
 	root: {
+		cursor: 'pointer',
 		transition: 'all 500ms',
 		boxShadow: 'inset 1px 2px #0000001F',
 		color: 'var(--light)',
@@ -32,9 +33,7 @@ const ColorButton = withStyles((theme) => ({
 			borderRadius: '15px 0px 0px 0px',
 		},
 		'&.Mui-disabled': {
-			'&:hover': {
-				cursor: 'not-allowed',
-			},
+			cursor: 'not-allowed',
 			opacity: '35%',
 			backgroundColor: 'grey',
 			color: 'var(--light-50)',
