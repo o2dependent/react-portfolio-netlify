@@ -19,7 +19,7 @@ const LoadingScreen = (props) => {
 					style={{
 						zIndex: 1000,
 						background: x,
-						position: 'absolute',
+						position: 'fixed',
 						top: 0,
 						left: 0,
 						height: '100%',
