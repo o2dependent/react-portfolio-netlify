@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import chroma from 'chroma-js';
 
 const LoadingScreen = (props) => {
-	const { xDir, changeIsDoneLoading } = props;
+	const { changeIsDoneLoading } = props;
 	const colors = ['#b72268', '#833bb4', '#ff0000'];
 	const bg = chroma
 		.scale([colors[Math.floor(Math.random() * colors.length)], '#1F1521'])
