@@ -24,6 +24,7 @@ const LoadingScreen = (props) => {
 						left: 0,
 						height: '100%',
 						width: '100%',
+						opacity: (i / bg.length) * 3,
 					}}
 					initial={{
 						y: '-100%',
@@ -34,11 +35,11 @@ const LoadingScreen = (props) => {
 					exit={{
 						y: '100%',
 						transition: {
-							delay: (bg.length - 1) * 0.05 - i * 0.05,
+							delay: (bg.length - 1) * 0.05 - i * 0.06,
 							duration: 0.75,
 						},
 					}}
-					transition={{ duration: 0.75, delay: 0.05 * i }}
+					transition={{ duration: 0.8, delay: 0.05 * i }}
 				></motion.div>
 			))}
 		</>
