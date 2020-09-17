@@ -38,6 +38,7 @@ class App extends Component {
 	};
 
 	render() {
+		const { isDoneLoading } = this.state;
 		return (
 			<div className='App'>
 				<Navbar navLoading={this.navLoading} />
@@ -50,7 +51,7 @@ class App extends Component {
 					}}
 				>
 					<AnimatePresence>
-						{!this.state.isDoneLoading && (
+						{!isDoneLoading && (
 							<LoadingScreen
 								changeIsDoneLoading={this.changeIsDoneLoading}
 							/>

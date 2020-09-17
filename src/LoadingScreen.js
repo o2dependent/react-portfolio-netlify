@@ -7,7 +7,7 @@ const LoadingScreen = (props) => {
 	const colors = ['#b72268', '#833bb4', '#ff0000'];
 	const bg = chroma
 		.scale([colors[Math.floor(Math.random() * colors.length)], '#1F1521'])
-		.colors(10);
+		.colors(5);
 
 	setTimeout(() => changeIsDoneLoading(true), 1500);
 
@@ -24,7 +24,6 @@ const LoadingScreen = (props) => {
 						left: 0,
 						height: '100%',
 						width: '100%',
-						opacity: (i / bg.length) * 3,
 					}}
 					initial={{
 						y: '-100%',
